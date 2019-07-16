@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面元素绑定事件(v-on:事件名="js片段或函数名")</title>
+</head>
+<body>
+<div id="app">
+    <!--事件中直接写js片段-->
+    <button v-on:click="num++">增加</button><br/>
+    <!--事件指定一个回调函数，必须是Vue实例中定义的函数-->
+    <button v-on:click="decrement">减少</button><br/>
+    <h1>num: {{num}}</h1>
+
+    <!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->
+    <input v-on:keyup.13="submit">
+    <!-- 同上 -->
+    <input v-on:keyup.enter="submit">
+    <!-- 缩写语法 -->
+    <input @keyup.enter="submit">
+    <!-- Alt + C -->
+    <input @keyup.alt.67="clear">
+    <!-- Ctrl + Click -->
+    <div @click.ctrl="doSomething">Do something</div>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:1
+        },
+        methods:{
+            decrement(){
+                this.num--;
+            }
+        }
+    })
+</script>
+</body>
+</html>

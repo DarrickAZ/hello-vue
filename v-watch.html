@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch可以让我们监控一个值的变化。从而做出相应的反应</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message">
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            message:""
+        },
+        watch:{
+            message(newVal, oldVal){
+                console.log(newVal, oldVal);
+            }
+        }
+    })
+</script>
+</body>
+</html>

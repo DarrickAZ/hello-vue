@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-else` 元素必须紧跟在带 `v-if` 或者 `v-else-if` 的元素的后面，否则它将不会被识别</title>
+</head>
+<body>
+<div v-if="Math.random() > 0.5">
+    Now you see me
+</div>
+<div v-else>
+    Now you don't
+</div>
+<hr>
+<div v-if="type === 'A'">
+    A
+</div>
+<div v-else-if="type === 'B'">
+    B
+</div>
+<div v-else-if="type === 'C'">
+    C
+</div>
+<div v-else>
+    Not A/B/C
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{hello}}{{name}}
+    v-text:<span v-text="hello1"></span> <br/>
+    v-html:<span v-html="hello1"></span>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            hello:"",// hello初始化为空
+            hello1: "<h1>大家好，我是虎哥</h1>",
+            name:"Jack"
+        },
+        created(){
+            this.hello = "hello, world！ 我出生了！";
+            console.log(this);
+        }
+    })
+</script>
+</body>
+</html>
